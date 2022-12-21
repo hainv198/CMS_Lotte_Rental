@@ -14,10 +14,6 @@ class RentalCarController extends Controller
      */
     public function index()
     {
-        $type ='';
-        $all_catrgory = RentalCar::where('type',$type);
-
-
         $rental_car = RentalCar::where('type',1)
 //            ->where('status', 1)
             ->limit(6)

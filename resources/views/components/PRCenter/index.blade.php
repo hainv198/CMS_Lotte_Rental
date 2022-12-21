@@ -109,11 +109,11 @@
 
                         <ul class="biolife-carousel nav-center xs-margin-top-34px nav-none-on-mobile" data-slick='{"rows":1,"arrows":true,"dots":false,"infinite":false,"speed":400,"slidesMargin":30,"slidesToShow":3, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 3}},{"breakpoint":992, "settings":{ "slidesToShow": 2}},{"breakpoint":768, "settings":{ "slidesToShow": 2}},{"breakpoint":600, "settings":{ "slidesToShow": 1}}]}'>
                             @foreach($new as $news)
-                                @if($news->status = 1)
+                                @if($news->status === 1)
                                     <li>
                                         <div class="post-item effect-01 style-bottom-info layout-03">
                                             <div class="thumbnail">
-                                                <a href="lotte_rental_detail_event.html" class="link-to-post">
+                                                <a href="{{route('events',$news->slug)}}" class="link-to-post">
                                                     <img src="{{$news->file_path}}" width="370" height="270" alt="">
                                                 </a>
                                                 <div class="post-date">
@@ -123,7 +123,7 @@
                                             </div>
                                             <div class="post-content">
                                                 <p class="post-name">
-                                                    <a href="lotte_rental_detail_event.html" class="linktopost">
+                                                    <a href="{{route('events',$news->slug)}}" class="linktopost">
                                                         {{$news->title}}
                                                     </a>
                                                 </p>
@@ -133,7 +133,7 @@
                                                     {{$news ->description}}
                                                 </p>
                                                 <div class="group-buttons">
-                                                    <a href="lotte_rental_detail_event.html" class="btn readmore">Đọc thêm</a>
+                                                    <a href="{{route('events',$news->slug)}}" class="btn readmore">Đọc thêm</a>
                                                 </div>
                                             </div>
                                         </div>

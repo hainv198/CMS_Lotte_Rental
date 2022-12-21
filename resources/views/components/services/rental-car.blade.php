@@ -10,9 +10,9 @@
 
             <!-- Path -->
             <div class="path">
-                <a href="index.html">
+                <a href="{{route('home')}}">
                     <span class="home">Trang chủ</span></a>
-                <a href="about_ldcc_rental.html"><span>Sản phẩm & dịch vụ</span></a>
+                <a href="{{route('services')}}"><span>Sản phẩm & dịch vụ</span></a>
                 <span>Dịch vụ thuê xe</span>
             </div>
             <!--// Path -->
@@ -108,7 +108,7 @@
                         <h4>
                             <i class='bx bx-car' ></i> <span style="font-size: 26px; text-transform: uppercase">Xe con</span>
                         </h4>
-                        <a href="service_rental_detail_ver2.html" class="hvr-icon-wobble-horizontal hvr-float-shadow">
+                        <a href="{{route('car')}}" class="hvr-icon-wobble-horizontal hvr-float-shadow">
                             Xem tất cả <i class='bx bx-right-arrow-alt hvr-icon'></i>
                         </a>
                     </div>
@@ -171,7 +171,7 @@
                 <div class="mt-5 mb-5">
                     <div class="header_service_tab">
                         <h4> <i class='bx bx-bus-school' ></i> <span style="font-size: 26px; text-transform: uppercase">Xe Bus</span> </h4>
-                        <a href="service_rental_detail_ver3.html" class="hvr-icon-wobble-horizontal hvr-float-shadow">
+                        <a href="{{route('bus')}}" class="hvr-icon-wobble-horizontal hvr-float-shadow">
                             Xem tất cả <i class='bx bx-right-arrow-alt hvr-icon'></i>
                         </a>
                     </div>

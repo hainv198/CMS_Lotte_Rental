@@ -36,17 +36,30 @@ Route::group(['prefix' => '/services'],function() {
     Route::get('rental' , 'RentalCarController@index')->name('services');
     Route::get('equipment-rental' , 'EquipmentController@index')->name('equipment-rental');
     Route::get('sales', 'SalesController@index') -> name('sales');
-//    Route::get('all-category/{$id}','RentalCarController@all')
+});
+Route::group(['prefix' => '/services-detail'],function() {
+    Route::get('rental-car','ServiceDetail@index')->name('car');
+    Route::get('rental-bus','ServiceDetail@carBus')->name('bus');
+    Route::get('sales-car','ServiceDetail@sale')->name('sales-car');
+    Route::get('sales-equipment','ServiceDetail@saleEquipment')->name('sales-equipment');
+
 });
 
 Route::group(['prefix' => '/PR-center'],function() {
     Route::get('/', 'NewsController@index') ->name('PR-center');
 });
+Route::get('/events/{slug}', 'NewsController@detailEvent') ->name('events');
 
-
-Route::get('/customer-center', 'CustomerCenterController@index')->name('customer-center');
 
 Route::get('/recruit', 'CareerController@index')->name('recruit');
+
+
+Route::get('/customer-center', 'ContactController@index')->name('customer-center');
+//Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+
+
+Route::get('/recruit', 'CareerController@index')->name('recruit');
+Route::get('/recruit/{slug}', 'CareerController@careerOpportunityDetail')->name('detailRecruit');
 
 
 

@@ -190,12 +190,6 @@
                                     <p class="dsc">support@lotterental.vn</p>
                                 </div>
                             </li>
-                            <!--<li>
-                                <div class="if-item">
-                                    <b class="tie">Store Open:</b>
-                                    <p class="dsc">8am - 08pm, Mon - Sat</p>
-                                </div>
-                            </li>-->
                         </ul>
                         <div class="inline">
                             <ul class="d-flex ">
@@ -221,22 +215,38 @@
                 <!--Contact form-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="contact-form-container">
-                        <form action="#" name="frm-contact" >
+
+                        @if(Session::has('success'))
+                            <div class="alert alert-success">
+                                {{Session::get('success')}}
+                            </div>
+                        @endif
+
+                        <form action="{{ route('contact.us.store') }}" name="frm-contact" method="post" >
+                            @csrf
                             <p class="form-row">
                                 <input type="text" name="name" value="" placeholder="Nhập tên" class="txt-input">
+                                @if ($errors->has('name'))
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                @endif
                             </p>
                             <p class="form-row">
                                 <input type="email" name="email" value="" placeholder="Địa chỉ email" class="txt-input">
+                                @if ($errors->has('email'))
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
                             </p>
                             <p class="form-row">
                                 <input type="tel" name="phone" value="" placeholder="Số điện thoại" class="txt-input">
-
+                                @if ($errors->has('phone'))
+                                    <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                @endif
                             </p>
                             <div class="row">
                                 <div class="col-md-6">
                                     <select class="input_popup_select-custorm">
                                         <option>Chọn địa điểm</option>
-                                        <option>Hà Nội</option>
+                                        <option value="Hà Nội">Hà Nội</option>
                                         <option>Đà Nẵng </option>
                                         <option>Hồ Chí Minh </option>
                                     </select>
@@ -257,10 +267,10 @@
                                 <p>Thời gian mong muốn</p>
                                 <div class="row">
                                     <div class="col-md-6 input_time">
-                                        <input type="datetime-local">
+                                        <input name="" type="datetime-local">
                                     </div>
                                     <div class="col-md-6 input_time">
-                                        <input type="datetime-local">
+                                        <input name="" type="datetime-local">
                                     </div>
                                 </div>
 

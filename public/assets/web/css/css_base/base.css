@@ -3931,13 +3931,24 @@ body.open-overlay #overlay{
 .biolife-panigations-block ul li a,
 .biolife-panigations-block ul li span{
     font-size: 14px;
-    line-height: 31px;
+    /*line-height: 31px;*/
     color: #666666;
     min-width: 41px;
     border: 1px solid #e6e6e6;
     display: inline-block;
-    border-radius: 9999px;
+    /*border-radius: 9999px;*/
 }
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgb(250, 192, 191) !important;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #E60013!important;
+    border-color: #E60013 !important;
+}
+
 .biolife-panigations-block ul li a.next,
 .biolife-panigations-block ul li a.prev{
     border-width: 2px;

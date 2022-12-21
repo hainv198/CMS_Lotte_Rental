@@ -9,4 +9,5 @@ class CustomerCenterController extends Controller
     public function index() {
         return view('components.CustomerCenter.index');
     }
+
 }

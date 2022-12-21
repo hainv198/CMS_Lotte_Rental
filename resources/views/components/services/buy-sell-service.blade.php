@@ -116,7 +116,7 @@
                             <span style="font-size: 20px; text-transform: uppercase">Hãng xe bán chạy</span>
                             <span class="cp_under_line" style="height: 2px"></span>
                         </h4>
-                        <a href="" class="hvr-icon-wobble-horizontal hvr-float-shadow">
+                        <a href="{{route('sales-car')}}" class="hvr-icon-wobble-horizontal hvr-float-shadow">
                             Xem tất cả <i class='bx bx-right-arrow-alt hvr-icon'></i>
                         </a>
                     </div>
@@ -246,7 +246,7 @@
                             <span class="cp_under_line" style="height: 2px"></span>
                         </h4>
 
-                        <a href="service_rental_detail_ver2.html" class="hvr-icon-wobble-horizontal hvr-float-shadow">
+                        <a href="{{route('sales-equipment')}}" class="hvr-icon-wobble-horizontal hvr-float-shadow">
                             Xem tất cả <i class='bx bx-right-arrow-alt hvr-icon'></i>
                         </a>
                     </div>
@@ -261,42 +261,35 @@
                                         <div class=" box_card">
                                             <div class="top_card">
                                                 <img src="{{$item->file_path}}" alt=""/>
-                                                <span>
+<!--                                                <span>
                                                     <i class='bx bxl-tailwind-css'></i>
                                                     <i class='bx bxl-tailwind-css'></i>
-                                                </span>
+                                                </span>-->
                                             </div>
                                             <div class="bottom_card hvr-underline-from-left">
-                                                <h3>Hyundai SantaFe</h3>
+                                                <h3>{{$item->name}}</h3>
                                                 <p>
-                                                    description
+                                                    {{$item->description}}
                                                 </p>
                                                 <div class="advants">
-                                                    <div>
-                                                        <span>Thời gian bảo hành</span>
-                                                        <div>
-                                                            <i class='bx bx-user-circle' ></i>
-                                                            <span>16</span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <span>Năm sản xuất</span>
-                                                        <div>
-                                                            <i class='bx bx-timer'></i>
-                                                            <span>2011</span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <span>Hãng xe</span>
-                                                        <div>
-                                                            <i class='bx bx-car' ></i>
-                                                            <span>Hyundai</span>
-                                                        </div>
-                                                    </div>
+                                                    <ul class="car__list">
+                                                        <li>
+                                                            <i class='bx bx-user' ></i>
+                                                            <span class="ml-1">{{$item->country}}</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="bx bx-category-alt"></i> <span class="ml-1">{{$item->car_base}}</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class='bx bx-palette'></i>
+                                                            <span class="ml-1">{{$item->color}} </span>
+                                                        </li>
+
+                                                    </ul>
                                                 </div>
-                                                <div class="price">
-                                                    <span>Giá dịch vụ</span>
-                                                    <span>1.000.000 VND</span>
+                                                <div class="car__footer">
+                                                    <span class="car__price">${{$item->price}} </span>
+                                                    <a href="" class="car__more"><span>Liên hệ</span></a>
                                                 </div>
                                             </div>
                                         </div>

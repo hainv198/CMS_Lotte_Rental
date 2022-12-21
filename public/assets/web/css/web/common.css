@@ -1167,7 +1167,7 @@ body.stopScroll #wrap {
 }
 
 .info {
-	padding: 20px 0 0px;
+	/*padding: 20px 0 0px;*/
 	text-align: center;
 	max-width: 400px;
 	margin: 0 auto;

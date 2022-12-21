@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Lib\BHelp;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;

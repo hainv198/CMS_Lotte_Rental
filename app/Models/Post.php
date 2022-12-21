@@ -144,7 +144,6 @@ class Post extends Model
             if (empty($data['slug'])) $data['slug'] = str_slug($data['case_name']);
         }
 
-
         $post = Post::where('slug',$data['slug'])->first();
 
         if ($post) {

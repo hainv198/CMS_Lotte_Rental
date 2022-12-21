@@ -29,13 +29,25 @@ class NewsController extends Controller
             ->limit(5)
             ->orderBy('status','DESC')
             ->get();
-
         return view('components.PRCenter.index',[
             'new' => $news,
             'event'=>$events,
         ]);
 
     }
+    public function detailEvent($slug) {
+
+        $detail = News::query()
+            ->where('slug',$slug)
+            ->get();
+//        dd($detail);
+        $event = News::query()->get();
+        return view('components.PRCenter.event_detail',[
+            'detail' => $detail,
+            'list' =>$event
+        ]);
+    }
+
 
 
     /**

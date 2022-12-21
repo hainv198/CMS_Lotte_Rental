@@ -1717,7 +1717,7 @@ figure.effect-lily:hover p {
 	font-size: 1em;
 	line-height: 1.6;
 	font-weight: 500;
-	min-height: 50px;
+	/*min-height: 50px;*/
 }
 .product .product-price {
 	display: flex;
@@ -1853,7 +1853,7 @@ a.btn.add-to-cart-btn {
 .list-detail-info-car li {
 	letter-spacing: 20px;
 	padding: 5px;
-
+	font-size: 14px;
 }
 .buttons-price p{
 	font-size: 15px;

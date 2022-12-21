@@ -17,37 +17,57 @@ class CareerController extends Controller
 
     public function index()
     {
-        return view('components.Career.index');
+        $listCareerOpportunity = Post::where('status',2)
+            ->where('status_job',2)
+            ->where('category_id',2)
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+
+        return view('components.Career.index', [
+            'listCareerOpportunity' => $listCareerOpportunity
+        ]);
     }
-    public function careerCulture()
+/*    public function detailRecruit($slug)
     {
-        return view('career.culture');
-    }
-    public function careerOpportunity()
+        $data = Career::query()
+            ->where('slug',$slug)
+            ->get();
+        return view('components.Career.index',[
+
+        ]);
+    }*/
+/*    public function careerOpportunity()
     {
         $listCareerOpportunity = Post::where('status',1)
         ->where('category_id',2)
         ->where('end_date', '>=', NOW())
         ->orderBy('created_at', 'DESC')
         ->get();
+        dd($listCareerOpportunity);
+        return view('components.Career.index', [
+            'listCareerOpportunity' => $listCareerOpportunity
+        ]);
+    }*/
 
-        return view('career.opportunity',
-            ['listCareerOpportunity' => $listCareerOpportunity
-
-            ]);
-    }
-
-    public function careerOpportunityDetail(Request $request)
+    public function careerOpportunityDetail(Request $request, $slug)
     {
-        $post = Post::where('slug',$request->slug)->first();
-        $listCareerOpportunity = Post::where('status',1)
+        $post = Post::query()
+            ->where('slug',$slug)
+            ->get();
+
+        $listCareerOpportunity = Post::query()
+            ->where('status',2)
             ->where('category_id',2)
-            ->where('end_date', '>=', NOW())
+            ->where('status_job',2)
             ->where('slug', '<>', $request->slug)
             ->limit(7)
             ->orderBy('created_at', 'DESC')
             ->get();
-        return view('career.opportunityDetail',
+//        dd($post);
+
+
+        return view('components.Career.career_detail',
             ['post' => $post,
              'listCareerOpportunity' => $listCareerOpportunity
             ]);
