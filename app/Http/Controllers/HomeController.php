@@ -20,29 +20,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $newEvents = Post::where('status',1)
-            ->where('category_id',1)
-            ->limit(5)
-            ->orderBy('created_at', 'asc')
-            ->get();
-        return view('components.home.index',['newEvents' => $newEvents]);
+        
+        return view('components.home.index');
     }
 
-    /*public function index()
-    {
-        $newEvents = Post::where('status',1)
-                        ->where('category_id',1)
-                        ->limit(3)
-                        ->orderBy('created_at', 'asc')
-                        ->get();
-        return view('home.index',['newEvents' => $newEvents]);
-    }
 
-    public function change(Request $request)
-    {
-        App::setLocale($request->lang);
-        session()->put('locale', $request->lang);
-
-        return redirect()->back();
-    }*/
 }

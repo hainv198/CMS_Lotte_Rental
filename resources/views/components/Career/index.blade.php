@@ -72,30 +72,32 @@
                                     <div class="jobs_listing_block ">
                                         <div class="cp_our_job_item  show ">
                                             @foreach($listCareerOpportunity as $item)
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-                                                        <h4>
+                                                @if($item->status_job === 2)
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+                                                            <h4>
+                                                                <a href="{{route('detailRecruit',$item->slug)}}" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
+                                                                    {{$item->title}}
+                                                                </a>
+                                                            </h4>
+                                                            <ul>
+                                                                <li>
+                                                                    <i class="fa fa-briefcase"></i>
+                                                                    {{$item->author_name}}
+                                                                </li>
+                                                                <li><i class="fa fa-map-marker"></i>
+                                                                    Hà Nội, Đà Nẵng
+                                                                </li>
+                                                                <li><i class="fa fa-calendar-o"></i>23/08/2022</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-2 cp_job_view_detail">
                                                             <a href="{{route('detailRecruit',$item->slug)}}" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
-                                                                {{$item->title}}
+                                                                Chi tiết
                                                             </a>
-                                                        </h4>
-                                                        <ul>
-                                                            <li>
-                                                                <i class="fa fa-briefcase"></i>
-                                                                {{$item->author_name}}
-                                                            </li>
-                                                            <li><i class="fa fa-map-marker"></i>
-                                                                Hà Nội, Đà Nẵng
-                                                            </li>
-                                                            <li><i class="fa fa-calendar-o"></i>23/08/2022</li>
-                                                        </ul>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-xs-12 col-sm-2 cp_job_view_detail">
-                                                        <a href="{{route('detailRecruit',$item->slug)}}" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
-                                                            Chi tiết
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                                @endif
                                             @endforeach
 
                                         </div>
@@ -122,41 +124,42 @@
                                     </h3>
                                     <div class="jobs_listing_block ">
                                         <div class="cp_our_job_item  show ">
-                                            <div class="row">
-                                                <div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-                                                    <h4>
-                                                        <a href="lotte_rental_recruit-_detail.html" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
-                                                            Chuyên viên Kinh doanh
-                                                        </a>
-                                                    </h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-briefcase"></i>Experienced
-                                                            (non-manager)</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            Hà Nội, Đà Nẵng
-                                                        </li>
-                                                        <li><i class="fa fa-calendar-o"></i>23/08/2022</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-xs-12 col-sm-2 cp_job_view_detail">
-                                                    <a href="lotte_rental_recruit-_detail.html" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
-                                                        Chi tiết
-                                                    </a>
-                                                </div>
-                                            </div>
+                                            @foreach($listCareerOpportunity as $item)
+                                                @if($item->status_job === 1)
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+                                                            <h4>
+                                                                <a href="{{route('detailRecruit',$item->slug)}}" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
+                                                                    {{$item->title}}
+                                                                </a>
+                                                            </h4>
+                                                            <ul>
+                                                                <li>
+                                                                    <i class="fa fa-briefcase"></i>
+                                                                    {{$item->author_name}}
+                                                                </li>
+                                                                <li><i class="fa fa-map-marker"></i>
+                                                                    Hà Nội, Đà Nẵng
+                                                                </li>
+                                                                <li><i class="fa fa-calendar-o"></i>23/08/2022</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-2 cp_job_view_detail">
+                                                            <a href="{{route('detailRecruit',$item->slug)}}" onclick="ga('send', 'event', 'VNWCompanyCulture', 'ViewJob', 'Lotte Data Communication Company Limited Vietnam-1559950');">
+                                                                Chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            @endforeach
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
-
     </section>
 @endsection

@@ -222,7 +222,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('contact.us.store') }}" name="frm-contact" method="post" >
+                        <form action="" name="frm-contact" method="post" >
                             @csrf
                             <p class="form-row">
                                 <input type="text" name="name" value="" placeholder="Nhập tên" class="txt-input">

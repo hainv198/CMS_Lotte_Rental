@@ -162,6 +162,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         Alaouy\Youtube\YoutubeServiceProvider::class,
         Ixudra\Curl\CurlServiceProvider::class,
+//        Spatie\Translatable\TranslatableServiceProvider::class,
+        Astrotomic\Translatable\TranslatableServiceProvider::class
+
 
     ],
 

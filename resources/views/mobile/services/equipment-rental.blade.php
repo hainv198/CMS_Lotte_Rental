@@ -18,153 +18,52 @@
         <div class="special-slide">
             <div class="container">
                 <ul class="biolife-carousel dots_ring_style" data-slick='{"arrows": false, "dots": true, "slidesMargin": 30, "slidesToShow": 1, "infinite": true, "speed": 800, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 1}},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":20, "dots": false}},{"breakpoint":480, "settings":{ "slidesToShow": 1}}]}' >
-                    <li>
-                        <div class="slide-contain biolife-banner__special">
-                            <div class="banner-contain">
-                                <div class="media">
-                                    <a href="#" class="bn-link">
-                                        <figure>
-                                            <img src="https://toplist.vn/images/800px/toan-phat-748930.jpg"
-                                                 width="616"
-                                                 height="483"
-                                                 alt=""
-                                                 style="height: 483px;width: 616px;"
-                                            >
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="text-content">
-                                    <b class="first-line">Lotte Rental</b>
-                                    <span class="second-line">Giải pháp tuyệt vời cho văn phòng</span>
-                                    <span class="third-line">
+                    @foreach($equipment_banner as $item)
+                        @if($item->type === 1)
+                            <li>
+                                <div class="slide-contain biolife-banner__special">
+                                    <div class="banner-contain">
+                                        <div class="media">
+                                            <a href="#" class="bn-link">
+                                                <figure>
+                                                    <img src="{{$item->file_path}}"
+                                                         width="616"
+                                                         height="483"
+                                                         alt=""
+                                                         style="height: 483px;width: 616px;"
+                                                    >
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="text-content">
+                                            <b class="first-line">Lotte Rental</b>
+                                            <span class="second-line">{{$item->name}}</span>
+                                            <span class="third-line">
                                             <i>
-                                                Công ty Hàn Quốc hàng đầu về cho thuê thiết bị văn phòng
+                                                {{$item->description}}
                                             </i>
                                             <br>
                                             <b>
-                                                Giá chỉ từ 420.000 <sup>đ</sup> / tháng
+                                                Giá chỉ từ {{$item->price_pro}} <sup>đ</sup> / tháng
                                             </b>
                                         </span>
-                                    <div class="product-detail">
-                                        <div class="buttons">
-                                            <a href="#" class="btn add-to-cart-btn text-white">Liên hệ tư vấn</a>
+                                            <div class="product-detail">
+                                                <!--<div class="price price-contain">
+                                                    <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
+                                                    <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                                                </div>-->
+                                                <div class="buttons">
+                                                    <a href="#" class="btn add-to-cart-btn">Liên hệ tư vấn</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-contain biolife-banner__special">
-                            <div class="banner-contain">
-                                <div class="media">
-                                    <a href="#" class="bn-link">
-                                        <figure>
-                                            <img src="http://hanoimoi.com.vn/Uploads/images/phananh/2021/08/01/TBYT1.jpg"
-                                                 width="616"
-                                                 height="483"
-                                                 alt=""
-                                                 style="width: 616px;"
-                                            >
-                                        </figure>
-                                    </a>
-                                </div>
-
-                                <div class="text-content">
-                                    <b class="first-line">Lotte Rental</b>
-                                    <span class="second-line">Cho thuê máy in văn phòng</span>
-                                    <span class="third-line">
-                                            <strong>
-                                                Ưu đãi: chỉ với 1.350.000 đ
-                                            </strong>
-                                            <br>
-                                            <b>
-                                                Miễn phí 1000 bản in/tháng
-                                            </b>
-                                        </span>
-                                    <div class="product-detail">
-
-                                        <div class="buttons">
-                                            <a href="#" class="btn add-to-cart-btn text-white">Liên hệ tư vấn</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-contain biolife-banner__special">
-                            <div class="banner-contain">
-                                <div class="media">
-                                    <a href="#" class="bn-link">
-                                        <figure>
-                                            <img src="assets/images/web/main/buy-car.jpg"
-                                                 width="616"
-                                                 height="483"
-                                                 alt=""
-                                                 style="height: 483px;width: 616px;"
-                                            >
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="text-content">
-                                    <b class="first-line">Lotte Rental</b>
-                                    <span class="second-line">Cho thuê thiết bị văn phòng, y tế </span>
-                                    <span class="third-line">
-                                            <strong>
-                                                ƯU ĐÃI GIẢM TỚI
-                                            </strong>
-                                            <br>
-                                            <b>
-                                                15% GIÁ TRỊ ĐƠN HÀNG
-                                            </b>
-                                        </span>
-                                    <div class="product-detail">
-
-                                        <div class="buttons">
-                                            <a href="#" class="btn add-to-cart-btn text-white">Liên hệ tư vấn</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="slide-contain biolife-banner__special">
-                            <div class="banner-contain">
-                                <div class="media">
-                                    <a href="#" class="bn-link">
-                                        <figure>
-                                            <img src="assets/images/web/main/buy-car.jpg"
-                                                 width="616"
-                                                 height="483"
-                                                 alt=""
-                                                 style="height: 483px;width: 616px;"
-                                            >
-                                        </figure>
-                                    </a>
-                                </div>
-
-                                <div class="text-content">
-                                    <b class="first-line">Lotte Rental</b>
-                                    <span class="second-line">Giải pháp tuyệt đối cho văn phòng của bạn</span>
-                                    <span class="third-line">
-                                            <i>
-                                                " Thông qua các dịch vụ cho thuê, chúng tôi cung cấp giải pháp kinh doanh khả quan nhất để giúp thiết lập nên các cơ sở doanh nghiệp và cải tiến phòng làm việc của họ. "
-                                            </i>
-                                        </span>
-                                    <div class="product-detail">
-                                        <div class="buttons">
-                                            <a href="#" class="btn add-to-cart-btn text-white">Liên hệ tư vấn</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
                 <div class="biolife-service type01 biolife-service__type01 sm-margin-top-0 xs-margin-top-45px">
-
                     <ul class="services-list">
                         <li>
                             <div class="service-inner">
@@ -231,89 +130,65 @@
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="grid container-fluid p-0">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="{{asset('assets/web/images/web/main/vp_1.webp')}}" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-lg-4 ">
-                                    <figure class="effect-lily ">
-                                        <img src="{{asset('assets/web/images/web/main/vp_5.webp')}}" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="{{asset('assets/web/images/web/main/vp_2.webp')}}" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="{{asset('assets/web/images/web/main/vp_1.webp')}}" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="{{asset('assets/web/images/web/main/vp_5.webp')}}" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="{{asset('assets/web/images/web/main/vp_2.webp')}}" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
+                                @foreach($equipment_office as $office )
+                                    @if($office->type === 2)
+                                        <div class="col-md-3">
+                                            <!--                                            <figure class="effect-lily">
+                                                <img src="{{$office->file_path}}" alt="img12"/>
+                                                <figcaption>
+                                                    <div>
+                                                        <h2>{{$office->name}}</h2>
+                                                        <p>
+                                                            <a href="">Liên hệ tư vấn </a>
+                                                        </p>
+                                                    </div>
+                                                    &lt;!&ndash;<a href="#">View more</a>&ndash;&gt;
+                                                </figcaption>
+                                            </figure>-->
+                                            <div class="product-slide">
+                                                <div class="product">
+                                                    <div class="product-header">
+                                                        <div class="top-right">
+                                                            <div class="product-feature-badge-item installment"></div>
+                                                        </div>
+                                                        <div class="product-image">
+                                                            <a>
+                                                                <img class=" ls-is-cached lazyloaded" loading="lazy" width="180px" height="180px"
+                                                                     src="{{$office->file_path}}">
+                                                            </a>
+                                                        </div>
+                                                        <div class="tags-image">
+
+                                                        </div>
+                                                        <div class="frame">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-body">
+                                                        <div class="product-feature-badge"></div>
+                                                        <div class="product-title">
+                                                            <a>
+                                                                {{$office->name}}
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-price">
+                                                            <p class="final-price">{{$office->price}} đ</p>
+                                                        </div>
+                                                        <div class="compare-button justify-content-center" style="display: flex;">
+                                                            <a style="display: flex;"
+                                                               class="add-compare compare-button ty-btn__text ty-add-to-compare cm-ajax cm-ajax-full-render"
+                                                               data-ca-target-id="compare,show_popup,comparison_list"
+                                                               data-ca-external-click-id="80953" compare-id="80953"
+                                                               rel="nofollow">
+                                                                Liên hệ tư vấn
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-footer"></div>
+                                                </div></div>
+                                        </div>
+                                    @endif
+                                @endforeach
                             </div>
 
                         </div>
@@ -321,181 +196,110 @@
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <div class="grid container-fluid p-0">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_1.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Máy phát tín hiệu</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="../web/assets/images/web/main/vp_5.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Máy phát tín hiệu</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_2.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Máy phát tín hiệu</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_1.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Máy phát tín hiệu</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="../web/assets/images/web/main/vp_5.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Máy phát tín hiệu</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_2.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Máy phát tín hiệu</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
+                                @foreach($equipment_signal_generator as $item )
+                                    @if($item->type === 3)
+                                        <div class="col-md-3">
+                                            <div class="product-slide">
+                                                <div class="product">
+                                                    <div class="product-header">
+                                                        <div class="top-right">
+                                                            <div class="product-feature-badge-item installment">
 
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image">
+                                                            <a>
+                                                                <img class=" ls-is-cached lazyloaded" loading="lazy" width="180px" height="180px"
+                                                                     src="{{$item->file_path}}">
+                                                            </a>
+                                                        </div>
+                                                        <div class="tags-image">
+
+                                                        </div>
+                                                        <div class="frame">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-body">
+                                                        <div class="product-feature-badge"></div>
+                                                        <div class="product-title">
+                                                            <a>
+                                                                {{$item->name}}
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-price">
+                                                            <p class="final-price">{{$item->price}} đ</p>
+                                                        </div>
+                                                        <div class="compare-button justify-content-center" style="display: flex;">
+                                                            <a style="display: flex;"
+                                                               class="add-compare compare-button ty-btn__text ty-add-to-compare cm-ajax cm-ajax-full-render"
+                                                               data-ca-target-id="compare,show_popup,comparison_list"
+                                                               data-ca-external-click-id="80953" compare-id="80953"
+                                                               rel="nofollow">
+                                                                Liên hệ tư vấn
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-footer"></div>
+                                                </div></div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                         <div class="grid container-fluid p-0">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_1.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="../web/assets/images/web/main/vp_5.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_2.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_1.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="../web/assets/images/web/main/vp_5.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_2.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
+                                @foreach($equipment_house as $item )
+                                    @if($item->type === 4)
+                                        <div class="col-md-3">
+                                            <div class="product-slide">
+                                                <div class="product">
+                                                    <div class="product-header">
+                                                        <div class="top-right">
+                                                            <div class="product-feature-badge-item installment">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image">
+                                                            <a>
+                                                                <img class=" ls-is-cached lazyloaded" loading="lazy" width="180px" height="180px"
+                                                                     src="{{$item->file_path}}">
+                                                            </a>
+                                                        </div>
+                                                        <div class="tags-image">
+
+                                                        </div>
+                                                        <div class="frame">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-body">
+                                                        <div class="product-feature-badge"></div>
+                                                        <div class="product-title">
+                                                            <a>
+                                                                {{$item->name}}
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-price">
+                                                            <p class="final-price">{{$item->price}} đ</p>
+                                                        </div>
+                                                        <div class="compare-button justify-content-center" style="display: flex;">
+                                                            <a style="display: flex;"
+                                                               class="add-compare compare-button ty-btn__text ty-add-to-compare cm-ajax cm-ajax-full-render"
+                                                               data-ca-target-id="compare,show_popup,comparison_list"
+                                                               data-ca-external-click-id="80953" compare-id="80953"
+                                                               rel="nofollow">
+                                                                Liên hệ tư vấn
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-footer"></div>
+                                                </div></div>
+                                        </div>
+                                    @endif
+                                @endforeach
                             </div>
 
                         </div>
@@ -503,90 +307,55 @@
                     <div class="tab-pane fade" id="nav-contact-tyt" role="tabpanel" aria-labelledby="nav-contact-tab_2">
                         <div class="grid container-fluid p-0">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_1.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="../web/assets/images/web/main/vp_5.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_2.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_1.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily ">
-                                        <img src="../web/assets/images/web/main/vp_5.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="" class="text-white">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <figure class="effect-lily">
-                                        <img src="../web/assets/images/web/main/vp_2.webp" alt="img12"/>
-                                        <figcaption>
-                                            <div>
-                                                <h2>Thiết bị văn phòng</h2>
-                                                <p>
-                                                    <a href="">Liên hệ tư vấn </a>
-                                                </p>
-                                            </div>
-                                            <!--<a href="#">View more</a>-->
-                                        </figcaption>
-                                    </figure>
-                                </div>
+                                @foreach($equipment_medical as $item )
+                                    @if($item->type === 5)
+                                        <div class="col-md-3">
+                                            <div class="product-slide">
+                                                <div class="product">
+                                                    <div class="product-header">
+                                                        <div class="top-right">
+                                                            <div class="product-feature-badge-item installment">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image">
+                                                            <a>
+                                                                <img class=" ls-is-cached lazyloaded" loading="lazy" width="180px" height="180px"
+                                                                     src="{{$item->file_path}}">
+                                                            </a>
+                                                        </div>
+                                                        <div class="tags-image">
+
+                                                        </div>
+                                                        <div class="frame">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-body">
+                                                        <div class="product-feature-badge"></div>
+                                                        <div class="product-title">
+                                                            <a>
+                                                                {{$item->name}}
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-price">
+                                                            <p class="final-price">{{$item->price}} đ</p>
+                                                        </div>
+                                                        <div class="compare-button justify-content-center" style="display: flex;">
+                                                            <a style="display: flex;"
+                                                               class="add-compare compare-button ty-btn__text ty-add-to-compare cm-ajax cm-ajax-full-render"
+                                                               data-ca-target-id="compare,show_popup,comparison_list"
+                                                               data-ca-external-click-id="80953" compare-id="80953"
+                                                               rel="nofollow">
+                                                                Liên hệ tư vấn
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-footer"></div>
+                                                </div></div>
+                                        </div>
+                                    @endif
+                                @endforeach
                             </div>
 
                         </div>

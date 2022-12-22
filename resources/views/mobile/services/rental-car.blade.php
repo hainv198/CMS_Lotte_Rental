@@ -96,7 +96,10 @@
                     <ul class="list-group-tao">
                         <li class="rent-car-term-list-item">
                             <div class="img-header" style="display: inline-block">
-                                <img alt="" class="img-content" src="{{asset('assets/web/resource/images/mob/icon/icons8-sale-price-tag-100.png')}}" width="32"/>
+                                <img alt=""
+                                     class="img-content"
+                                     src="{{asset('assets/web/resource/images/mob/icon/icons8-sale-price-tag-100.png')}}"
+                                     width="32"/>
                             </div>
                             <span>Biểu phí cạnh tranh</span>
                         </li>
@@ -149,7 +152,7 @@
         <div class="mySlides ">
             <div class="mt-5 p-3 d-flex justify-content-between ">
                 <h4> <i class='bx bx-car' ></i> <span style="font-size: 20px; text-transform: uppercase">Xe con</span> </h4>
-                <a href="service_rental_detail_ver3.html" class="hvr-icon-wobble-horizontal hvr-float-shadow">
+                <a href="" class="hvr-icon-wobble-horizontal hvr-float-shadow">
                     Xem tất cả <i class='bx bx-right-arrow-alt hvr-icon'></i>
                 </a>
             </div>
@@ -158,267 +161,50 @@
                 <div class="_container-slider swiper" data-swiper-autoplay="2000">
                     <div class="slide-container">
                         <div class="card-wrapper swiper-wrapper" >
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car1.jpg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details ">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
+                            @foreach($rental_car as $item)
+                                @if($item->status === 1 && $item->type === 1)
+                                    <div class="card_item swiper-slide hvr-underline-from-left">
+                                        <div class="image-box">
+                                            <a href="#">
+                                                <img src="{{$item->file_path}}" alt="" />
+                                            </a>
                                         </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
+                                        <br>
+                                        <div class="profile-details ">
+                                            <div class="name-job">
+                                                <h3 class="name">
+                                                    {{$item->name}}
+                                                </h3>
+                                                <h4 class="job">
+                                                    {{$item->description}}
+                                                </h4>
+                                                <div class="advants_card ">
+                                                    <div>
+                                                        <!--<span>Số ghế</span>-->
+                                                        <div>
+                                                            <i class='bx bx-user-circle' ></i>
+                                                            <span>
+                                                                    {{$item->seats}}
+                                                                </span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <!--<span>Hãng xe</span>-->
+                                                        <div>
+                                                            <i class='bx bx-car' ></i>
+                                                            <span>{{$item->car_base}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="price_card">
+                                                    <span>Giá dịch vụ</span>
+                                                    <span>{{$item->price}} VND</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car2.jpeg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left ">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car3.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car4.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car5.jpeg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-next swiper-navBtn"></div>
@@ -439,270 +225,53 @@
                 <div class="_container-slider swiper" data-swiper-autoplay="2000">
                     <div class="slide-container">
                         <div class="card-wrapper swiper-wrapper" >
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car1.jpg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details ">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
+                            @foreach($rental_bus as $item)
+                                @if($item->status === 1 && $item->type === 2)
+                                    <div class="card_item swiper-slide hvr-underline-from-left">
+                                        <div class="image-box">
+                                            <a href="#">
+                                                <img src="{{$item->file_path}}" alt="" />
+                                            </a>
                                         </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
+                                        <br>
+                                        <div class="profile-details ">
+                                            <div class="name-job">
+                                                <h3 class="name">
+                                                    {{$item->name}}
+                                                </h3>
+                                                <h4 class="job">
+                                                    {{$item->description}}
+                                                </h4>
+                                                <div class="advants_card ">
+                                                    <div>
+                                                        <!--<span>Số ghế</span>-->
+                                                        <div>
+                                                            <i class='bx bx-user-circle' ></i>
+                                                            <span>
+                                                                    {{$item->seats}}
+                                                                </span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <!--<span>Hãng xe</span>-->
+                                                        <div>
+                                                            <i class='bx bx-car' ></i>
+                                                            <span>{{$item->car_base}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="price_card">
+                                                    <span>Giá dịch vụ</span>
+                                                    <span>{{$item->price}} VND</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car2.jpeg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left ">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car3.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car4.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car5.jpeg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car1.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
+
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -724,266 +293,44 @@
                 <div class="_container-slider swiper" data-swiper-autoplay="2000">
                     <div class="slide-container">
                         <div class="card-wrapper swiper-wrapper" >
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car1.jpg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details ">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
+                            @foreach($rental_car as $item)
+                                @if($item->status === 2 && $item->type === 1)
+                                    <div class="card_item swiper-slide hvr-underline-from-left">
+                                        <div class="image-box">
+                                            <a href="#">
+                                                <img src="{{$item->file_path}}" alt="" />
+                                            </a>
                                         </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
+                                        <br>
+                                        <div class="profile-details ">
+                                            <div class="name-job">
+                                                <h3 class="name">{{$item->name}}</h3>
+                                                <h4 class="job">{{$item->description}}</h4>
+                                                <div class="advants_card ">
+                                                    <div>
+                                                        <!--<span>Số ghế</span>-->
+                                                        <div>
+                                                            <i class='bx bx-user-circle' ></i>
+                                                            <span>{{$item->seats}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <!--<span>Hãng xe</span>-->
+                                                        <div>
+                                                            <i class='bx bx-car' ></i>
+                                                            <span>{{$item->car_base}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="price_card">
+                                                    <span>Giá dịch vụ</span>
+                                                    <span>{{$item->price}} VND</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car2.jpeg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left ">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car3.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car4.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car5.jpeg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
 
                         </div>
                     </div>
@@ -1006,266 +353,44 @@
                 <div class="_container-slider swiper" data-swiper-autoplay="2000">
                     <div class="slide-container">
                         <div class="card-wrapper swiper-wrapper" >
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car1.jpg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details ">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
+                            @foreach($rental_bus as $item)
+                                @if($item->status === 2 && $item->type === 2)
+                                    <div class="card_item swiper-slide hvr-underline-from-left">
+                                        <div class="image-box">
+                                            <a href="#">
+                                                <img src="{{$item->file_path}}" alt="" />
+                                            </a>
                                         </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
+                                        <br>
+                                        <div class="profile-details ">
+                                            <div class="name-job">
+                                                <h3 class="name">{{$item->name}}</h3>
+                                                <h4 class="job">{{$item->description}}</h4>
+                                                <div class="advants_card ">
+                                                    <div>
+                                                        <!--<span>Số ghế</span>-->
+                                                        <div>
+                                                            <i class='bx bx-user-circle' ></i>
+                                                            <span>{{$item->seats}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <!--<span>Hãng xe</span>-->
+                                                        <div>
+                                                            <i class='bx bx-car' ></i>
+                                                            <span>{{$item->car_base}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="price_card">
+                                                    <span>Giá dịch vụ</span>
+                                                    <span>{{$item->price}} VND</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <a href="#">
-                                        <img src="{{asset('assets/web/images/web/main/car2.jpeg')}}" alt="" />
-                                    </a>
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left ">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car3.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car4.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car5.jpeg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="{{asset('assets/web/images/web/main/car1.jpg')}}" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_item swiper-slide hvr-underline-from-left">
-                                <div class="image-box">
-                                    <img src="../web/assets/images/web/main/car1.jpg" alt="" />
-                                </div>
-                                <br>
-                                <div class="profile-details">
-                                    <div class="name-job">
-                                        <h3 class="name">THE NEW AVANTE AD(G)1.6 SMART CHOICE F/L</h3>
-                                        <h4 class="job">Xe 15 chỗ đã qua sử dụng hiện trạng tốt </h4>
-                                        <div class="advants_card ">
-                                            <div>
-                                                <!--<span>Số ghế</span>-->
-                                                <div>
-                                                    <i class='bx bx-user-circle' ></i>
-                                                    <span>16</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <!--<span>Hãng xe</span>-->
-                                                <div>
-                                                    <i class='bx bx-car' ></i>
-                                                    <span>Hyundai</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price_card">
-                                            <span>Giá dịch vụ</span>
-                                            <span>1.000.000 VND</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-next swiper-navBtn"></div>

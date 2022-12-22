@@ -69,12 +69,16 @@ class PostsController extends Controller
         }
 
         if (\request()->hasFile('thumbnail') && ($data['category_id'] == 1 || $data['category_id'] == 3)) {
-            $img = request()->file('thumbnail');
-            $fullpath = '/public/img/thumbnails';
-            $path = Storage::disk('s3')->put($fullpath, $img, 'public');
-            $arr_path = explode('public', $path);
-            $data['thumbnail'] = $arr_path['1'];
 
+            $img = request()->file('thumbnail');
+
+            $fullpath = '/public/img/thumbnails';
+
+            $path = Storage::disk('s3')->put($fullpath, $img, 'public');
+
+            $arr_path = explode('public', $path);
+
+            $data['thumbnail'] = $arr_path['1'];
         }
         try {
             $post = $this->post->createPost($data);

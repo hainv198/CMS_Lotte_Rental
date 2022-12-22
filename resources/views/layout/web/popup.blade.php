@@ -93,3 +93,60 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="Modal_Recruit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered form_contact" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center" id="">Bắt đàu sự nghiệp mới của bạn tại Lotte Rental</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Tên liên hệ</label>
+                            <input type="email" class="input_popup" id="name" placeholder="Nhập tên">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Số điện thoại</label>
+                            <input type="text" class="input_popup" id="phone" placeholder="Số điện thoại">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="input_popup" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group mb-2 p-0 col-md-6">
+                            <label for="inputState">Địa chỉ</label>
+                            <select id="location_jd" class="input_popup_select">
+                                <option >Địa chỉ</option>
+                                <option>Hà Nội </option>
+                                <option>Đà Nẵng </option>
+                                <option>Hồ Chí Minh </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputState">Hồ sơ ứng tuyển</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mô tả</label> <br>
+                        <textarea class="text_description" rows="5"  placeholder="Nhập mô tả..."></textarea>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer m-auto">
+                <button type="button" class="button_form_contact">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>

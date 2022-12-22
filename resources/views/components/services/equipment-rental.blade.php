@@ -68,7 +68,6 @@
                             </li>
                         @endif
                     @endforeach
-
                 </ul>
             </div>
         </div>
@@ -194,7 +193,7 @@
                                                     <div class="product-header">
                                                         <div class="top-right">
                                                             <div class="product-feature-badge-item installment">
-                                                                <span>todos </span>
+
                                                             </div>
                                                         </div>
                                                         <div class="product-image">
@@ -250,7 +249,6 @@
                                                     <div class="product-header">
                                                         <div class="top-right">
                                                             <div class="product-feature-badge-item installment">
-                                                                <span>todos </span>
                                                             </div>
                                                         </div>
                                                         <div class="product-image">
@@ -305,7 +303,7 @@
                                                     <div class="product-header">
                                                         <div class="top-right">
                                                             <div class="product-feature-badge-item installment">
-                                                                <span>todos </span>
+
                                                             </div>
                                                         </div>
                                                         <div class="product-image">
@@ -361,7 +359,7 @@
                                                     <div class="product-header">
                                                         <div class="top-right">
                                                             <div class="product-feature-badge-item installment">
-                                                                <span>todos </span>
+
                                                             </div>
                                                         </div>
                                                         <div class="product-image">

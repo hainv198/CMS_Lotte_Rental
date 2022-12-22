@@ -17,38 +17,16 @@ class CareerController extends Controller
 
     public function index()
     {
-        $listCareerOpportunity = Post::where('status',2)
-            ->where('status_job',2)
+        $listCareerOpportunity = Post::query()
+            ->where('status',2)
             ->where('category_id',2)
             ->orderBy('created_at', 'DESC')
             ->get();
-
 
         return view('components.Career.index', [
             'listCareerOpportunity' => $listCareerOpportunity
         ]);
     }
-/*    public function detailRecruit($slug)
-    {
-        $data = Career::query()
-            ->where('slug',$slug)
-            ->get();
-        return view('components.Career.index',[
-
-        ]);
-    }*/
-/*    public function careerOpportunity()
-    {
-        $listCareerOpportunity = Post::where('status',1)
-        ->where('category_id',2)
-        ->where('end_date', '>=', NOW())
-        ->orderBy('created_at', 'DESC')
-        ->get();
-        dd($listCareerOpportunity);
-        return view('components.Career.index', [
-            'listCareerOpportunity' => $listCareerOpportunity
-        ]);
-    }*/
 
     public function careerOpportunityDetail(Request $request, $slug)
     {
@@ -57,15 +35,9 @@ class CareerController extends Controller
             ->get();
 
         $listCareerOpportunity = Post::query()
-            ->where('status',2)
-            ->where('category_id',2)
-            ->where('status_job',2)
-            ->where('slug', '<>', $request->slug)
-            ->limit(7)
-            ->orderBy('created_at', 'DESC')
-            ->get();
-//        dd($post);
 
+            ->orderBy('id', 'DESC')
+            ->get();
 
         return view('components.Career.career_detail',
             ['post' => $post,
@@ -105,10 +77,7 @@ class CareerController extends Controller
                 }else{
                     return response()->json(['success'=> false]);
                 }
-
             }
-
-
         } catch (\Exception $e) {
             return $e->getMessage();
         }

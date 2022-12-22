@@ -20,8 +20,15 @@ use App\Http\Controllers\HomeController;
 
 /*Home*/
 
-//Route::get('/', HomeController::class,'index') -> name('home');
 Route::get('/', 'HomeController@index')->name('home');
+
+/*Route::get('lang/{locale}',function($locale) {
+    if (!in_array($locale, ['en','vn'])) {
+        abort(404);
+    }
+    session()->put('locale',$locale);
+    return redirect()->back();
+});*/
 
 /*About*/
 

@@ -8,10 +8,9 @@
 
                 <!-- Path -->
                 <div class="path">
-                    <a href="index.html">
+                    <a href="">
                         <span class="home"></span></a>
-                    <a href="about_ldcc_rental.html"><span></span></a>
-                    <!--                    <span>Thuê thiết bị</span>-->
+                    <a href=""><span></span></a>
                 </div>
                 <!--// Path -->
             </div>
@@ -114,36 +113,21 @@
                                     <div class="detail-row reset-bullet">
                                         <h2 class="detail-title">MÔ TẢ CÔNG VIỆC</h2>
                                         <p>
-                                            {{$item->jpb_description}}
+                                            {{$item->job_description}}
                                         </p>
 
                                     </div>
                                     <div class="detail-row" reset-bullet>
                                         <h2 class="detail-title">YÊU CẦU CÔNG VIỆC</h2>
                                         <p>
-                                            + Language: Good English skills (reading, writing) <br>
-                                            + Skill:<br>
-                                            - Graduated from college/university majoring in IT or related majors <br>
-                                            - 3+ years of work experience on Backend systems or Java applications to serve large-scale and high traffic projects.<br>
-                                            - Experience in Java developing language and Java Spring-Framework<br>
-                                            - Experience in constructing & operating storage in Large Data Distributed Environments (Hadoop, HBase, Redis,<br>
-                                            - MongoDB, Mysql etc)<br>
-                                            - Deep knowledge and experience in applying Design Patterns<br>
-                                            - Understanding & experience in Data structure, Algorithm, Distributed Service<br>
-                                            - Experience with RESTful, GIT<br>
-                                            - Knowledge in System Architecture and MSA<br>
-                                            - Proficient in Optimization and System Analyzer<br>
-                                            - Understand the standards of the process of building and deploying a software<br>
-                                            - Highly responsible in work, proactive, self-organized and good teamwork spirit<br>
-                                            - Time management skills<br>
-                                            + Acknowledgments: Experience in the following areas is an advantage: DEVOPS, CI/CD, Docker.
+                                           {{$item->job_requirements}}
                                         </p>
 
                                     </div>
                                     <div class="detail-row">
                                         <h3 class="detail-title">ĐỊA CHỈ CÔNG TY</h3>
                                         <div class="content_fck ">
-                                            <span><i class='bx bxs-map'></i> Floor 31, LOTTE Center, 54 Lieu Giai, Ba Dinh District, Hanoi</span>
+                                            <span><i class='bx bxs-map'></i> {{$item->recruitment_office_name}}</span>
                                         </div>
                                     </div>
 
@@ -161,106 +145,65 @@
                     </div>
                     <div class="col-lg-5 col-custom-xxl-3 p-4">
                         <div class="side-wrapper">
-                            <div class="banner-ad">
-                                <script type='text/javascript'>OA_show(854);</script>
-                            </div>
                             <div class="similar-jobs">
                                 <p>Công việc khác</p>
                             </div>
                         </div>
-                        <div class="widget posts-widget">
-                            <div class="wgt-content">
-                                <ul class="posts">
-                                    <li>
-                                        <div class="wgt-post-item">
-                                            <div class="thumb">
-                                                <a href="#"><img src="assets/images/web/common/top_logo_en.png" width="80" height="58" alt=""></a>
-                                            </div>
-                                            <div class="detail">
-                                                <h4 class="post-name"><a href="#">Chuyên viên sale</a></h4>
-                                                <p class="post-archive">22 Jan 2022</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="wgt-post-item">
-                                            <div class="thumb">
-                                                <a href="#"><img src="assets/images/web/common/top_logo_en.png" width="80" height="58" alt=""></a>
-                                            </div>
-                                            <div class="detail">
-                                                <h4 class="post-name">
-                                                    <a href="#">Quản lí cấp cao</a>
-                                                </h4>
-                                                <p class="post-archive">06 Apr 2022</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="wgt-post-item">
-                                            <div class="thumb">
-                                                <a href="#"><img src="assets/images/web/common/top_logo_en.png" width="80" height="58" alt=""></a>
-                                            </div>
-                                            <div class="detail">
-                                                <h4 class="post-name"><a href="#">Công việc 3</a></h4>
-                                                <p class="post-archive">12 May 2022</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+
+                            <div class="widget posts-widget">
+                                <div class="wgt-content">
+                                    <ul class="posts">
+                                        @foreach($listCareerOpportunity as $item)
+                                            @if($item->status === 2 && $item->category_id === 2)
+                                                <li>
+                                                    <div class="wgt-post-item">
+                                                        <div class="thumb">
+                                                            <a href=""><img src="{{''}}" width="80" height="58" alt=""></a>
+                                                        </div>
+                                                        <div class="detail">
+                                                            <h4 class="post-name"><a href="{{route('detailRecruit',$item->slug)}}">{{$item->title}}</a></h4>
+                                                            <p class="post-archive">{{$item->start_date}}</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="widget posts-widget">
-                            <div class="similar-jobs">
-                                <p>Hoạt động công ty</p>
+                            <hr>
+                            <div class="widget posts-widget">
+                                <div class="similar-jobs">
+                                    <p>Hoạt động công ty</p>
+                                </div>
+                                <div class="wgt-content">
+                                    <ul class="posts">
+                                        @foreach($listCareerOpportunity as $item)
+                                        @if($item->status === 1 && $item->category_id === 1)
+                                            <li>
+                                                <div class="wgt-post-item">
+                                                    <div class="thumb">
+                                                        <a href="#">
+                                                            <img src="{{$item->thumbnail}}" width="80" height="58" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="detail">
+                                                        <h4 class="post-name"><a href=''>{{$item->title}}</a></h4>
+                                                        <p class="post-archive">{{$item->publish_date}}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="wgt-content">
-                                <ul class="posts">
-                                    <li>
-                                        <div class="wgt-post-item">
-                                            <div class="thumb">
-                                                <a href="#">
-                                                    <img src="assets/images/web/main/event2.jpg" width="80" height="58" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="detail">
-                                                <h4 class="post-name"><a href="#">Tin tức liên quan 1</a></h4>
-                                                <p class="post-archive">22 Jan 2022</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="wgt-post-item">
-                                            <div class="thumb">
-                                                <a href="#"><img src="assets/images/web/main/event3.jpg" width="80" height="58" alt=""></a>
-                                            </div>
-                                            <div class="detail">
-                                                <h4 class="post-name">
-                                                    <a href="#">Tin tức liên quan 2</a>
-                                                </h4>
-                                                <p class="post-archive">06 Apr 2022</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="wgt-post-item">
-                                            <div class="thumb">
-                                                <a href="#"><img src="assets/images/web/main/event1.jpg" width="80" height="58" alt=""></a>
-                                            </div>
-                                            <div class="detail">
-                                                <h4 class="post-name"><a href="#">Tin tức liên quan 3</a></h4>
-                                                <p class="post-archive">12 May 2022</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 @endforeach
             </div>
         </section>
-
+        @include('layout.web.popup')
     </main>
 @endsection
